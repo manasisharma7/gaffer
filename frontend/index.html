@@ -4,17 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Football Analytics</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">AI Football</div>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -23,42 +21,41 @@
     <a href="services.html" class="cta-btn">Try Demo</a>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
-    <video autoplay muted loop id="bgVideo">
+    <video autoplay muted loop>
       <source src="assets/football.mp4" type="video/mp4">
     </video>
-    <div class="hero-text">
-      <h1>Visualize the Game Intelligently</h1>
-      <p>AI-powered tactical analytics for modern football.</p>
+    <div class="content">
+      <h1>Smarter Football Analytics</h1>
+      <p>Turn match data into tactical insight — formations, control zones, and performance metrics powered by AI.</p>
       <a href="services.html" class="btn-primary">Explore Now</a>
     </div>
   </section>
 
-  <!-- Features -->
   <section class="features">
-    <div class="feature" data-aos="fade-up">
-      <h2>Track Every Player</h2>
-      <p>Analyze spatio-temporal data to understand positioning.</p>
+    <h2 class="section-title">What We Offer</h2>
+    <p class="section-subtitle">AI modules that help decode how the game is truly played.</p>
+
+    <div class="feature-card">
+      <h3>Formation Finder</h3>
+      <p>Detect tactical setups like 4-4-2 or 4-3-3 from player positions.</p>
+      <a href="#" class="btn-outline">View Demo</a>
     </div>
-    <div class="feature" data-aos="fade-up" data-aos-delay="100">
-      <h2>Visualize Team Shapes</h2>
-      <p>See team compactness and formation changes in real-time.</p>
+
+    <div class="feature-card">
+      <h3>Pitch Control</h3>
+      <p>Visualize which team dominates each area of the field in real time.</p>
+      <a href="#" class="btn-outline">See Example</a>
     </div>
-    <div class="feature" data-aos="fade-up" data-aos-delay="200">
-      <h2>AI Tactical Insights</h2>
-      <p>Detect pressing patterns and coordinated movements.</p>
+
+    <div class="feature-card">
+      <h3>Player Insights</h3>
+      <p>Track work rates, sprint intensity, and fatigue levels across players.</p>
+      <a href="#" class="btn-outline">Open Report</a>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 AI Football Analytics</p>
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <footer>© 2025 AI Football Analytics</footer>
+  <script src="js/script.js"></script>
 </body>
 </html>
