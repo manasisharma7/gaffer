@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services | AI Football</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | AI Football Analytics</title>
 
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- AOS (Animate On Scroll) for smooth fade animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+
+<body>
+  <!-- ===============================
+       NAVBAR
+       =============================== -->
   <header class="navbar">
     <div class="logo">AI Football</div>
     <nav>
@@ -15,38 +23,73 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="matches.html">Matches</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <a href="services.html" class="cta-btn">Try Demo</a>
+    <a href="matches.html" class="cta-btn">Try Demo</a>
   </header>
 
-  <section class="page-section services-section">
-  <h1>Our Services</h1>
-  <p>We combine AI with match data to reveal tactical depth beyond traditional stats.</p>
+  <!-- ===============================
+       SERVICES SECTION
+       =============================== -->
+  <section class="services-section">
+    <h1 class="section-title">Our Core Analytical Modules</h1>
+    <p class="section-subtitle">
+      Using AI and spatio-temporal data, our system transforms match tracking data into actionable tactical insights.
+    </p>
 
-  <div class="services-wrapper">
-    <div class="service-card">
-      <h3>Formation Recognition</h3>
-      <p>Automatically identify team shapes during live play.</p>
+    <div class="service-container">
+
+      <!-- Dynamic Tactical Shape -->
+      <div class="service-card" data-aos="fade-up">
+        <div class="service-icon">📊</div>
+        <h2>Dynamic Tactical Shape Analysis</h2>
+        <p>
+          Move beyond static formations. Our model calculates team compactness, 
+          defensive line height, and tactical transitions to visualize how shape evolves during a match.
+        </p>
+        <a href="matches.html" class="btn-outline">View Example</a>
+      </div>
+
+      <!-- Pitch Control Modeling -->
+      <div class="service-card" data-aos="fade-up">
+        <div class="service-icon">⚽</div>
+        <h2>Pitch Control Modeling</h2>
+        <p>
+          Identify which team dominates key zones on the field. The AI-powered pitch control maps 
+          show territorial dominance and how teams create valuable space over time.
+        </p>
+        <a href="matches.html" class="btn-outline">View Heatmap</a>
+      </div>
+
+      <!-- Player Performance Analytics -->
+      <div class="service-card" data-aos="fade-up">
+        <div class="service-icon">🏃‍♂️</div>
+        <h2>Player Performance Analytics</h2>
+        <p>
+          Quantify player intensity and fatigue. By analyzing sprints, distance covered, 
+          and high-intensity actions, our system provides data-driven performance insights.
+        </p>
+        <a href="matches.html" class="btn-outline">Explore Metrics</a>
+      </div>
     </div>
+  </section>
 
-    <div class="service-card">
-      <h3>Pitch Control Mapping</h3>
-      <p>Measure which side commands the most valuable zones.</p>
-    </div>
+  <!-- ===============================
+       FOOTER
+       =============================== -->
+  <footer>
+    <p>© 2025 AI Football Analytics | Built for Tactical Intelligence</p>
+  </footer>
 
-    <div class="service-card">
-      <h3>Performance Reports</h3>
-      <p>Get fatigue and sprint metrics for better player analysis.</p>
-    </div>
-  </div>
-
-  <a href="contact.html" class="btn-primary">Explore More</a>
-</section>
-
-
-  <footer>© 2025 AI Football Analytics</footer>
-  <script src="js/script.js"></script>
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 </html>

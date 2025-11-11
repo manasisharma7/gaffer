@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | AI Football</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | AI Football Analytics</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
 
+<body>
+  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">AI Football</div>
     <nav>
@@ -15,25 +16,56 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="matches.html">Matches</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </nav>
-    <a href="services.html" class="cta-btn">Try Demo</a>
   </header>
 
-  <section class="page-section">
+  <!-- Contact Section -->
+  <section class="contact-section">
     <h1>Contact Us</h1>
-    <p>Have a question or idea? We’d love to hear from you.</p>
+    <p>
+      Have a question, feedback, or collaboration idea?<br>
+      Our team would love to hear from you.
+    </p>
 
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Your Name">
-      <input type="email" id="email" placeholder="Your Email">
-      <textarea id="message" placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <div class="contact-container">
+      <!-- Contact Form -->
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" placeholder="Your message..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+
+      <!-- Contact Info Box -->
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p><strong>Email:</strong> info@aifootballanalytics.com</p>
+        <p><strong>Mentor:</strong> Prof. Unmesh Shukla</p>
+        <p><strong>Team:</strong> GAFFER — B.Tech CSE (2nd Year)</p>
+      </div>
+    </div>
   </section>
 
-  <footer>© 2025 AI Football Analytics</footer>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 AI Football Analytics | Built for Tactical Intelligence</p>
+  </footer>
+
   <script src="js/script.js"></script>
 </body>
 </html>
