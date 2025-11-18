@@ -1,109 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pitch Control Modeling | AI Football Analytics</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pitch Control | Gaffer's Guide</title>
 
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  </head>
 
-<body>
-  <!-- ===============================
-       NAVBAR
-       =============================== -->
-  <header class="navbar">
-    <div class="logo">AI Football</div>
-    <nav>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">Gaffer's Guide</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="matches.html">Matches</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <button class="logout-btn" onclick="logout()">Logout</button>
+        </ul>
+      </nav>
+      <a href="match-analysis.html" class="cta-btn">Back</a>
+    </header>
+
+    <!-- Page header -->
+    <section class="analysis-header">
+      <h1>Pitch Control Modeling</h1>
+      <p>Discover which team dominated spatial control across pitch zones.</p>
+    </section>
+
+    <!-- Summary -->
+    <section class="match-summary">
+      <div class="summary-card" data-aos="fade-up">
+        <h2>Match Summary</h2>
+        <p><strong>Teams:</strong> Manchester City vs Liverpool</p>
+        <p><strong>Date:</strong> October 15, 2023</p>
+        <p><strong>Venue:</strong> Etihad Stadium</p>
+        <p><strong>Final Score:</strong> 2 - 1</p>
+      </div>
+    </section>
+
+    <!-- Heatmap -->
+    <section class="heatmap-section">
+      <h2>AI Pitch Control Heatmap</h2>
+      <p>Heatmap showing area dominance across the field.</p>
+
+      <div class="heatmap-container">
+        <img src="assets/heatmap-demo.jpg" alt="Pitch Control Heatmap" />
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <h3>Team A Control</h3>
+          <p>61%</p>
+        </div>
+        <div class="metric-card">
+          <h3>Team B Control</h3>
+          <p>39%</p>
+        </div>
+        <div class="metric-card">
+          <h3>Key Zone Dominance</h3>
+          <p>Central Midfield</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insights -->
+    <section class="insights-section">
+      <h2>AI Tactical Insights</h2>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="matches.html">Matches</a></li>
-        <li><a href="match-analysis.html">Analysis Hub</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li>Team A dominated central channels consistently.</li>
+        <li>Wide dominance shifted to Team B after the 70th minute.</li>
+        <li>
+          Left flank overlaps significantly influenced goalscoring sequence.
+        </li>
       </ul>
-    </nav>
-    <a href="match-analysis.html" class="cta-btn">Back</a>
-  </header>
+    </section>
 
-  <!-- ===============================
-       PAGE HEADER
-       =============================== -->
-  <section class="analysis-header">
-    <h1>Pitch Control Modeling</h1>
-    <p>
-      Discover which team controls key pitch zones. This AI-driven heatmap shows how
-      teams dominate spatial areas to create attacking opportunities.
-    </p>
-  </section>
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Gaffer's Guide | Built for Tactical Intelligence</p>
+    </footer>
+    <script>
+      const token =
+        localStorage.getItem("authToken") || localStorage.getItem("token");
+      if (!token) {
+        window.location.href = "login.html";
+      }
+    </script>
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
 
-  <!-- ===============================
-       MATCH SUMMARY SECTION
-       =============================== -->
-  <section class="match-summary">
-    <div class="summary-card" data-aos="fade-up">
-      <h2>Match Summary</h2>
-      <p><strong>Teams:</strong> Manchester City vs Liverpool</p>
-      <p><strong>Date:</strong> Oct 15, 2023</p>
-      <p><strong>Venue:</strong> Etihad Stadium</p>
-      <p><strong>Final Score:</strong> 2 - 1</p>
-    </div>
-  </section>
-
-  <!-- ===============================
-       HEATMAP VISUALIZATION SECTION
-       =============================== -->
-  <section class="heatmap-section">
-    <h2>AI Pitch Control Heatmap</h2>
-    <p>Visualization of team dominance across pitch zones.</p>
-
-    <div class="heatmap-container">
-      <img src="../assets/heatmap-demo.jpg" alt="Pitch Control Heatmap" />
-    </div>
-
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <h3>Team A Control</h3>
-        <p>61%</p>
-      </div>
-      <div class="metric-card">
-        <h3>Team B Control</h3>
-        <p>39%</p>
-      </div>
-      <div class="metric-card">
-        <h3>Key Zone Dominance</h3>
-        <p>Central Midfield</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===============================
-       AI INSIGHTS SECTION
-       =============================== -->
-  <section class="insights-section">
-    <h2>AI Tactical Insights</h2>
-    <ul>
-      <li>Team A maintained superior control in central zones throughout first half.</li>
-      <li>Wing dominance shifted to Team B after 70th minute.</li>
-      <li>Heatmap reveals strong overlapping plays on the left flank.</li>
-    </ul>
-  </section>
-
-  <!-- ===============================
-       FOOTER
-       =============================== -->
-  <footer>
-    <p>© 2025 AI Football Analytics | Built for Tactical Intelligence</p>
-  </footer>
-
-  <!-- AOS Animation -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
-</body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
+  </body>
+</html>

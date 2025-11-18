@@ -1,0 +1,10 @@
+flask
+flask-cors
+pymongo
+python-dotenv
+PyJWT
+werkzeug
+numpy
+scipy
+matplotlib
+pandas

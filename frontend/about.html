@@ -1,58 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | AI Football Analytics</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Gaffer's Guide</title>
 
-<body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">AI Football</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="matches.html">Matches</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <a href="matches.html" class="cta-btn">Try Demo</a>
-  </header>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-  <!-- About Section -->
-  <section class="about-section">
-  <div class="about-text">
-    <h1>About AI Football Analytics</h1>
-    <p>
-      We bridge the gap between raw spatio-temporal data and actionable tactical insights.
-      Our platform uses artificial intelligence to analyze open-source SkillCorner tracking data,
-      helping coaches, analysts, and fans understand the deeper dynamics of football.
-    </p>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">Gaffer's Guide</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="matches.html">Matches</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <button class="logout-btn" onclick="logout()">Logout</button>
+        </ul>
+      </nav>
+    </header>
 
-    <p>
-      Our core modules — <strong>Dynamic Tactical Shape</strong>,
-      <strong>Pitch Control Mapping</strong>, and
-      <strong>Player Performance Analytics</strong> —
-      provide a comprehensive understanding of how teams create, defend, and exploit space.
-    </p>
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="about-text">
+        <h1>About Gaffer's Guide</h1>
+        <p>
+          We bridge the gap between raw spatio-temporal football tracking data
+          and tactical intelligence using advanced AI and machine learning.
+        </p>
+        <p>
+          Our tools generate insights through
+          <strong>Dynamic Tactical Shape</strong>,
+          <strong>Pitch Control Modeling</strong>, and
+          <strong>Player Performance Analytics</strong>, enabling deep match
+          analysis.
+        </p>
+        <a href="matches.html" class="btn-primary">Explore Match Library</a>
+      </div>
 
-    <a href="matches.html" class="btn-primary">Explore Match Library</a>
-  </div>
+      <div class="about-image">
+        <img src="assets/about-img.jpg" alt="Football Tactical Illustration" />
+      </div>
+    </section>
 
-  <div class="about-image">
-    <img src="assets/about-img.jpg" alt="Football Analysis Illustration" />
-  </div>
-</section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 AI Football Analytics | Designed for Tactical Intelligence</p>
-  </footer>
-
-  <script src="js/script.js"></script>
-</body>
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Gaffer's Guide | Designed for Tactical Intelligence</p>
+    </footer>
+    <script>
+      const token =
+        localStorage.getItem("authToken") || localStorage.getItem("token");
+      if (!token) {
+        window.location.href = "login.html";
+      }
+    </script>
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>

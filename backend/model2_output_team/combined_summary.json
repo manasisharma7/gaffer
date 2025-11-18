@@ -1,0 +1,13 @@
+{
+  "fps_used": 25,
+  "teams": {
+    "A": {
+      "name": "Brisbane_Roar_FC",
+      "num_players": 16
+    },
+    "B": {
+      "name": "Perth_Glory_Football_Club",
+      "num_players": 16
+    }
+  }
+}

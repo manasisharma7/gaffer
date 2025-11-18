@@ -1,119 +1,108 @@
 console.log("auth.js loaded");
 
-// ---------------- SIGNUP ----------------
+// API BASE URL
+const API_URL = "http://127.0.0.1:5500/api/auth";
+
+// Toast / message box
+function showMessage(msg, type = "error") {
+  let box = document.getElementById("msgBox");
+  if (!box) {
+    box = document.createElement("div");
+    box.id = "msgBox";
+    box.style.position = "fixed";
+    box.style.top = "20px";
+    box.style.right = "20px";
+    box.style.padding = "12px 18px";
+    box.style.borderRadius = "6px";
+    box.style.zIndex = "9999";
+    box.style.color = "#fff";
+    box.style.fontWeight = "600";
+    document.body.appendChild(box);
+  }
+
+  box.style.background = type === "success" ? "#28a745" : "#d9534f";
+  box.innerText = msg;
+  box.style.display = "block";
+
+  setTimeout(() => (box.style.display = "none"), 2500);
+}
+
+
+// ---------- AUTH PROTECTED PAGE CHECK ----------
+const publicPages = ["login.html", "signup.html"];
+const currentPage = location.pathname.split("/").pop();
+const authToken = localStorage.getItem("authToken");
+
+if (!publicPages.includes(currentPage) && (!authToken || authToken === "null" || authToken === "undefined")) {
+  window.location.href = "login.html";
+}
+
+
+// ---------- SIGNUP ----------
 const signupForm = document.getElementById("signupForm");
 
 if (signupForm) {
-    signupForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
+  signupForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    const API_URL = "http://localhost:5500/api/auth";
-
-// ---------------- SIGNUP -----------------
-async function handleSignup() {
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
-  const res = await fetch(`${API_URL}/register`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, email, password })
-  });
-
-  const data = await res.json();
-
-  if (!res.ok) {
-    return alert(data.message || "Signup failed");
-  }
-
-  alert("Signup Successful!");
-  window.location.href = "/frontend/login.html";
-}
-
-// ---------------- LOGIN -----------------
-async function handleLogin() {
-  const email = document.getElementById("loginEmail").value;
-  const password = document.getElementById("loginPassword").value;
-
-  const res = await fetch(`${API_URL}/login`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password })
-  });
-
-  const data = await res.json();
-
-  if (!res.ok) {
-    return alert(data.message || "Login failed");
-  }
-
-  // Save token
-  localStorage.setItem("token", data.token);
-
-  alert("Login successful!");
-
-  // 🔥 Redirect to Dashboard
-  window.location.href = "/frontend/dashboard.html";
-}
     const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-        try {
-            const res = await fetch("http://localhost:5500/api/auth/register", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, password }),
-            });
+    try {
+      const res = await fetch(`${API_URL}/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password }),
+      });
 
-            const data = await res.json();
-            console.log("Signup Response:", data);
+      const data = await res.json();
+      if (!res.ok) return showMessage(data.message || "Signup failed");
 
-            if (res.ok) {
-                alert("Signup successful! Redirecting to login...");
-                window.location.href = "login.html";
-            } else {
-                alert(data.message || "Signup failed!");
-            }
-        } catch (error) {
-            console.error(error);
-            alert("Error connecting to server");
-        }
-    });
+      showMessage("Account created successfully!", "success");
+      setTimeout(() => (window.location.href = "login.html"), 1400);
+    } catch {
+      showMessage("Error connecting to server");
+    }
+  });
 }
 
 
-// ---------------- LOGIN ----------------
+// ---------- LOGIN ----------
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
-    loginForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-        try {
-            const res = await fetch("http://localhost:5500/api/auth/login", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password }),
-            });
+    try {
+      const res = await fetch(`${API_URL}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
-            const data = await res.json();
-            console.log("Login Response:", data);
+      const data = await res.json();
+      if (!res.ok || !data.token)
+        return showMessage(data.message || "Invalid credentials");
 
-            if (res.ok && data.token) {
-                localStorage.setItem("authToken", data.token);
-                alert("Login successful!");
-                window.location.href = "dashboard.html";
-            } else {
-                alert(data.message || "Login failed!");
-            }
-        } catch (error) {
-            console.error(error);
-            alert("Error connecting to server");
-        }
-    });
+      // SAVE TOKEN — LocalStorage (correct for protected dashboard pages)
+      localStorage.setItem("authToken", data.token);
+
+      showMessage("Login successful! Redirecting...", "success");
+      setTimeout(() => (window.location.href = "index.html"), 1200);
+    } catch {
+      showMessage("Error connecting to server");
+    }
+  });
 }
+
+
+// ---------- LOGOUT ----------
+window.logout = function () {
+  localStorage.removeItem("authToken");
+  window.location.href = "login.html";
+};

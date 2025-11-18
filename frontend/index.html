@@ -1,65 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Football Analytics</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaffer's Guide</title>
 
-  <header class="navbar">
-    <div class="logo">AI Football</div>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <a href="services.html" class="cta-btn">Try Demo</a>
-  </header>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">Gaffer's Guide</div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="matches.html">Matches</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <button class="logout-btn" onclick="logout()">Logout</button>
+        </ul>
+      </nav>
+    </header>
 
-  <section class="hero">
-  <video autoplay muted loop id="bgVideo">
-    <source src="assets/football.mp4" type="video/mp4">
-  </video>
-  <div class="hero-text">
-    <h1>AI-Powered Football Tactical Analysis Platform</h1>
-    <p>Decode team structures, pitch control, and player performance using AI.</p>
-    <a href="matches.html" class="btn-primary">Browse Match Library</a>
-  </div>
-</section>
+    <section class="hero">
+      <!-- <video autoplay muted loop>
+        <source src="assets/football.mp4" type="video/mp4" />
+      </video> -->
+      <div class="content">
+        <h1>AI-Powered Football Tactical Analysis Platform</h1>
+        <p>
+          Decode team structures, pitch control, and player performance using
+          AI.
+        </p>
+        <a href="matches.html" class="btn-primary">Browse Match Library</a>
+      </div>
+    </section>
 
+    <section class="features">
+      <h2 class="section-title">Key Tactical Insights</h2>
+      <p class="section-subtitle">
+        Our AI engine analyzes match data in real time
+      </p>
 
-<section class="features">
-  <div class="feature">
-    <h2>Dynamic Tactical Shape</h2>
-    <p>Track team formations and compactness minute-by-minute to understand tactical evolution.</p>
-  </div>
-  <div class="feature">
-    <h2>Pitch Control Mapping</h2>
-    <p>Visualize which team dominates key zones on the pitch using AI-generated control heatmaps.</p>
-  </div>
-  <div class="feature">
-    <h2>Player Performance Analytics</h2>
-    <p>Quantify player work rate, sprint intensity, and fatigue using advanced motion data.</p>
-  </div>
-</section>
+      <div class="feature-card">
+        <h3>Dynamic Tactical <br>Shape</h3>
+        <p>Track formations and compactness minute-by-minute.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Pitch Control <br>Mapping</h3>
+        <p>Visualize territorial dominance of teams.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Player Performance Analytics</h3>
+        <p>Measure sprint intensity and work rate of players.</p>
+      </div>
+    </section>
 
-<section class="explore">
-  <h2>Explore Match Library</h2>
-  <p>Access professional football tracking data and begin your AI tactical analysis.</p>
-  <a href="matches.html" class="btn-primary">Explore Matches</a>
-</section>
+    <section class="explore">
+      <h2>Explore Match Library</h2>
+      <p>Access professional match tracking data for tactical review.</p>
+      <br>
+      <a href="matches.html" class="btn-primary">Explore Matches</a>
+    </section>
 
-
-
-  <footer>
-  <p>© 2025 AI Football Analytics | Built for Intelligent Game Insights</p>
-</footer>
-
-  <script src="js/script.js"></script>
-</body>
+    <footer>
+      <p>© 2025 Gaffer's Guide</p>
+    </footer>
+    <script>
+      const token =
+        localStorage.getItem("authToken") || localStorage.getItem("token");
+      if (!token) {
+        window.location.href = "login.html";
+      }
+    </script>
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>

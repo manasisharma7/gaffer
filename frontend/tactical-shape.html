@@ -1,111 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tactical Shape Analysis | AI Football Analytics</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tactical Shape Analysis | Gaffer's Guides</title>
 
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  </head>
 
-<body>
-  <!-- ===============================
-       NAVBAR
-       =============================== -->
-  <header class="navbar">
-    <div class="logo">AI Football</div>
-    <nav>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">Gaffer's Guide</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="matches.html">Matches</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <button class="logout-btn" onclick="logout()">Logout</button>
+        </ul>
+      </nav>
+      <a href="match-analysis.html" class="cta-btn">Back</a>
+    </header>
+
+    <!-- Page header -->
+    <section class="analysis-header">
+      <h1>Dynamic Tactical Shape Analysis</h1>
+      <p>
+        Visualize formation evolution, team compactness, and defensive line
+        height throughout the match.
+      </p>
+    </section>
+
+    <!-- Match summary -->
+    <section class="match-summary">
+      <div class="summary-card" data-aos="fade-up">
+        <h2>Match Summary</h2>
+        <p><strong>Teams:</strong> Barcelona vs Real Madrid</p>
+        <p><strong>Date:</strong> November 2, 2023</p>
+        <p><strong>Venue:</strong> Camp Nou</p>
+        <p><strong>Final Score:</strong> 1 - 1</p>
+      </div>
+    </section>
+
+    <!-- Visualization -->
+    <section class="formation-section">
+      <h2>Detected Formation</h2>
+      <p>Formation detected: <strong>4-3-3</strong></p>
+
+      <div class="formation-diagram">
+        <img src="assets/formation-demo.jpg" alt="Team Formation Diagram" />
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <h3>Team Compactness</h3>
+          <p>64.8%</p>
+        </div>
+        <div class="metric-card">
+          <h3>Defensive Line Height</h3>
+          <p>43.2 meters</p>
+        </div>
+        <div class="metric-card">
+          <h3>Formation Stability</h3>
+          <p>78%</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insights -->
+    <section class="insights-section">
+      <h2>AI Tactical Insights</h2>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="matches.html">Matches</a></li>
-        <li><a href="match-analysis.html">Analysis Hub</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li>Team maintained compact structure during transitions.</li>
+        <li>Defensive line increased gradually after 60th minute.</li>
+        <li>Formation shifted temporarily to 4-2-3-1 under high press.</li>
       </ul>
-    </nav>
-    <a href="match-analysis.html" class="cta-btn">Back</a>
-  </header>
+    </section>
 
-  <!-- ===============================
-       PAGE HEADER
-       =============================== -->
-  <section class="analysis-header">
-    <h1>Dynamic Tactical Shape Analysis</h1>
-    <p>
-      Understand how formations evolve during play. Our AI model calculates team compactness,
-      defensive line height, and positional fluidity across the match.
-    </p>
-  </section>
-
-  <!-- ===============================
-       MATCH INFO SECTION
-       =============================== -->
-  <section class="match-summary">
-    <div class="summary-card" data-aos="fade-up">
-      <h2>Match Summary</h2>
-      <p><strong>Teams:</strong> Barcelona vs Real Madrid</p>
-      <p><strong>Date:</strong> Nov 2, 2023</p>
-      <p><strong>Venue:</strong> Camp Nou</p>
-      <p><strong>Final Score:</strong> 1 - 1</p>
-    </div>
-  </section>
-
-  <!-- ===============================
-       FORMATION VISUALIZATION SECTION
-       =============================== -->
-  <section class="formation-section">
-    <h2>Detected Formation Shape</h2>
-    <p>Formation detected: <strong>4-3-3</strong></p>
-
-    <div class="formation-diagram">
-      <img src="../assets/formation-demo.jpg" alt="Team Formation Diagram" />
-
-    </div>
-
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <h3>Team Compactness</h3>
-        <p>64.8%</p>
-      </div>
-      <div class="metric-card">
-        <h3>Defensive Line Height</h3>
-        <p>43.2 meters</p>
-      </div>
-      <div class="metric-card">
-        <h3>Formation Stability</h3>
-        <p>78%</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===============================
-       INSIGHTS SECTION
-       =============================== -->
-  <section class="insights-section">
-    <h2>AI Tactical Insights</h2>
-    <ul>
-      <li>Team maintained compact structure during transitions.</li>
-      <li>Defensive line advanced gradually after 60th minute.</li>
-      <li>Formation shifted temporarily to 4-2-3-1 under high press.</li>
-    </ul>
-  </section>
-
-  <!-- ===============================
-       FOOTER
-       =============================== -->
-  <footer>
-    <p>© 2025 AI Football Analytics | Built for Tactical Intelligence</p>
-  </footer>
-
-  <!-- AOS Animation -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
-</body>
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Gaffer's Guide | Built for Tactical Intelligence</p>
+    </footer>
+    <script>
+      const token =
+        localStorage.getItem("authToken") || localStorage.getItem("token");
+      if (!token) {
+        window.location.href = "login.html";
+      }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
+  </body>
 </html>

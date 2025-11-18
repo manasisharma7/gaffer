@@ -1,85 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Match Library | AI Football Analytics</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Match Library | Gaffer's Guide</title>
 
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  </head>
 
-<body>
-  <!-- ===============================
-       NAVBAR
-       =============================== -->
-  <header class="navbar">
-    <div class="logo">AI Football</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="matches.html" class="active">Matches</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <a href="matches.html" class="cta-btn">Try Demo</a>
-  </header>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">Gaffer's Guide</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="matches.html" class="active">Matches</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <button class="logout-btn" onclick="logout()">Logout</button>
+        </ul>
+      </nav>
+    </header>
 
-  <!-- ===============================
-       MATCH LIBRARY SECTION
-       =============================== -->
-  <section class="matches-section">
-    <h1 class="section-title">Match Library</h1>
-    <p class="section-subtitle">
-      Explore professional match data powered by SkillCorner and start your AI-based tactical analysis.
-    </p>
+    <!-- Match Library Section -->
+    <section class="matches-section">
+      <h1 class="section-title">Match Library</h1>
+      <p class="section-subtitle">
+        Explore professional match data and start your AI-based tactical
+        analysis.
+      </p>
 
-    <div class="match-grid">
-      <!-- Match Card 1 -->
-      <div class="match-card" data-aos="fade-up">
-        <h2>Manchester City vs Liverpool</h2>
-        <p>Date: October 15, 2023</p>
-        <p>Venue: Etihad Stadium</p>
-        <p>Final Score: 2 - 1</p>
-        <a href="match-analysis.html" class="btn-primary">Analyze Match</a>
+      <div class="match-grid">
+        <div class="match-card" data-aos="fade-up">
+          <h2>Manchester City vs Liverpool</h2>
+          <p>Date: October 15, 2023</p>
+          <p>Venue: Etihad Stadium</p>
+          <p>Final Score: 2 - 1</p>
+          <br>
+          <a href="match-analysis.html" class="btn-primary">Analyze Match</a>
+        </div>
+
+        <div class="match-card" data-aos="fade-up">
+          <h2>Barcelona vs Real Madrid</h2>
+          <p>Date: November 2, 2023</p>
+          <p>Venue: Camp Nou</p>
+          <p>Final: 1 - 1</p>
+          <br>
+          <a href="match-analysis.html" class="btn-primary">Analyze Match</a>
+        </div>
+
+        <div class="match-card" data-aos="fade-up">
+          <h2>Arsenal vs <br>
+            Chelsea</h2>
+          <p>Date: December 9, 2023</p>
+          <p>Venue: Emirates Stadium</p>
+          <p>Final Score: 3 - 2</p>
+          <br>
+          <a href="match-analysis.html" class="btn-primary">Analyze Match</a>
+        </div>
       </div>
+    </section>
 
-      <!-- Match Card 2 -->
-      <div class="match-card" data-aos="fade-up">
-        <h2>Barcelona vs Real Madrid</h2>
-        <p>Date: November 2, 2023</p>
-        <p>Venue: Camp Nou</p>
-        <p>Final Score: 1 - 1</p>
-        <a href="match-analysis.html" class="btn-primary">Analyze Match</a>
-      </div>
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Gaffer's Guide | Built for Tactical Intelligence</p>
+    </footer>
+    <script>
+      const token =
+        localStorage.getItem("authToken") || localStorage.getItem("token");
+      if (!token) {
+        window.location.href = "login.html";
+      }
+    </script>
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
 
-      <!-- Match Card 3 -->
-      <div class="match-card" data-aos="fade-up">
-        <h2>Arsenal vs Chelsea</h2>
-        <p>Date: December 9, 2023</p>
-        <p>Venue: Emirates Stadium</p>
-        <p>Final Score: 3 - 2</p>
-        <a href="match-analysis.html" class="btn-primary">Analyze Match</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===============================
-       FOOTER
-       =============================== -->
-  <footer>
-    <p>© 2025 AI Football Analytics | Built for Tactical Intelligence</p>
-  </footer>
-
-  <!-- AOS Animation -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
-</body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
+  </body>
 </html>

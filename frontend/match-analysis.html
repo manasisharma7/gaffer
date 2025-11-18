@@ -1,89 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Match Analysis | AI Football Analytics</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Match Analysis | Gaffer's Guide</title>
 
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  </head>
 
-<body>
-  <!-- ===============================
-       NAVBAR
-       =============================== -->
-  <header class="navbar">
-    <div class="logo">AI Football</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="matches.html">Matches</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <a href="matches.html" class="cta-btn">Back to Matches</a>
-  </header>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">Gaffer's Guide</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="matches.html" class="active">Matches</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <button class="logout-btn" onclick="logout()">Logout</button>
+        </ul>
+      </nav>
+      <a href="matches.html" class="cta-btn">Back to Matches</a>
+    </header>
 
-  <!-- ===============================
-       MATCH ANALYSIS SECTION
-       =============================== -->
-  <section class="analysis-section">
-    <h1 class="section-title">AI-Powered Match Analysis</h1>
-    <p class="section-subtitle">
-      Choose the type of analysis you’d like to explore for this match.
-      Each module leverages advanced AI and tracking data to reveal tactical insights.
-    </p>
+    <section class="analysis-section">
+      <h1 class="section-title">AI-Powered Match Analysis</h1>
+      <p class="section-subtitle">
+        Select the analysis module you want to explore for this match.
+      </p>
 
-    <div class="analysis-container">
-      <!-- Dynamic Tactical Shape -->
-      <div class="analysis-card" data-aos="fade-up">
-        <div class="analysis-icon">📊</div>
-        <h2>Dynamic Tactical Shape</h2>
-        <p>
-          Visualize formations, team compactness, and defensive line height — updated minute-by-minute.
-        </p>
-        <a href="#" class="btn-outline">View Tactical Shape</a>
+      <div class="analysis-container">
+        <div class="analysis-card" data-aos="fade-up">
+          <div class="analysis-icon">📊</div>
+          <h2>Dynamic Tactical Shape</h2>
+          <p>
+            Visualize formation changes and defensive compactness
+            minute-by-minute.
+          </p>
+          <a href="tactical-shape.html" class="btn-outline"
+            >View Tactical Shape</a
+          >
+        </div>
+
+        <div class="analysis-card" data-aos="fade-up">
+          <div class="analysis-icon">⚽</div>
+          <h2>Pitch Control <br>Mapping</h2>
+          <p>See territorial dominance using AI-generated pitch <br>heatmaps.</p>
+          <a href="pitch-control.html" class="btn-outline"
+            >View Pitch Control</a
+          >
+        </div>
+
+        <div class="analysis-card" data-aos="fade-up">
+          <div class="analysis-icon">🏃‍♂️</div>
+          <h2>Player Performance Analytics</h2>
+          <p>
+            Analyze sprint intensity, fatigue, and total workload <br>of players.
+          </p>
+          <a href="player-performance.html" class="btn-outline"
+            >View Player Stats</a
+          >
+        </div>
       </div>
+    </section>
 
-      <!-- Pitch Control -->
-      <div class="analysis-card" data-aos="fade-up">
-        <div class="analysis-icon">⚽</div>
-        <h2>Pitch Control Mapping</h2>
-        <p>
-          See how teams control key pitch zones using AI-generated heatmaps of spatial dominance.
-        </p>
-        <a href="#" class="btn-outline">View Pitch Control</a>
-      </div>
+    <footer>
+      <p>© 2025 Gaffer's Guide | Designed for Tactical Intelligence</p>
+    </footer>
+    <script>
+      const token =
+        localStorage.getItem("authToken") || localStorage.getItem("token");
+      if (!token) {
+        window.location.href = "login.html";
+      }
+    </script>
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
 
-      <!-- Player Performance -->
-      <div class="analysis-card" data-aos="fade-up">
-        <div class="analysis-icon">🏃‍♂️</div>
-        <h2>Player Performance Analytics</h2>
-        <p>
-          Analyze player fatigue, sprint intensity, and overall work rate to measure physical output.
-        </p>
-        <a href="#" class="btn-outline">View Player Stats</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===============================
-       FOOTER
-       =============================== -->
-  <footer>
-    <p>© 2025 AI Football Analytics | Designed for Tactical Intelligence</p>
-  </footer>
-
-  <!-- AOS Animation -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
-</body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
+  </body>
 </html>

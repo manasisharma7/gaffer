@@ -1,11 +1,12 @@
-// Navbar color change on scroll
+// NAVBAR COLOR CHANGE ON SCROLL
 window.addEventListener("scroll", () => {
   const nav = document.querySelector(".navbar");
   nav.classList.toggle("scrolled", window.scrollY > 50);
 });
 
-// Simple contact form validation
+// CONTACT FORM MESSAGE (FRONTEND ONLY)
 const form = document.getElementById("contactForm");
+
 if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
